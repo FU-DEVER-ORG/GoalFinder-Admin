@@ -11,10 +11,6 @@ import dynamic from 'next/dynamic';
 import { useRouter } from 'next/navigation';
 
 export default function Providers({children}: {children:React.ReactNode}) {
-    const route = useRouter();
-    useEffect(() => {
-        route.push("/user")
-    }, [])
     return (
         <StyledComponentsRegistry>
             <Provider store={store}>
