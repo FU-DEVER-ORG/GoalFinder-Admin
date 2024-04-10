@@ -52,39 +52,52 @@ export default function AdminLayout({
   //implement dashboard here
   //todo customize in need
   return (
-    <Layout style={{
-      height: "100vh"
-    }}>
+    <Layout
+      style={{
+        height: "100vh",
+      }}
+    >
       <Header
         style={{
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
           padding: "0px 10px",
-          position: 'sticky',
+          position: "sticky",
           top: 0,
           zIndex: 1,
         }}
-      > 
+      >
         <Button
           type="text"
-          icon={collapse ? <MenuUnfoldOutlined style={{
-            fontSize: "24px"
-          }} /> : <MenuFoldOutlined style={{
-            fontSize: "24px"
-          }} />}
+          icon={
+            collapse ? (
+              <MenuUnfoldOutlined
+                style={{
+                  fontSize: "24px",
+                }}
+              />
+            ) : (
+              <MenuFoldOutlined
+                style={{
+                  fontSize: "24px",
+                }}
+              />
+            )
+          }
           onClick={() => setCollapse(!collapse)}
           style={{
             width: 64,
             height: 64,
-            color: "#fff"
-          }} children={undefined}>
-            
-          </Button>
-          <Menu
+            color: "#fff",
+          }}
+        >
+          vewv
+        </Button>
+        <Menu
           theme="dark"
           mode="horizontal"
-          defaultSelectedKeys={['2']}
+          defaultSelectedKeys={["2"]}
           items={demoItem1}
           style={{
             flex: 1,
@@ -112,9 +125,9 @@ export default function AdminLayout({
         <Layout
           style={{
             padding: "24px 24px",
-          }} 
+          }}
         >
-           <Content
+          <Content
             style={{
               position: "relative",
               padding: 24,
