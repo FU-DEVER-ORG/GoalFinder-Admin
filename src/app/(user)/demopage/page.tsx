@@ -1,3 +1,4 @@
+"use client"
 import InforBox from "@/components/common/InforBoxDemo";
 import React from "react";
 import schema from "./demopage.schema";
@@ -16,5 +17,6 @@ export default function DemoPage() {
 }
 
 export const StyledTest = styled.div`
-  background-color: red;
+  background-color: blue;
+  color: white;
 `;

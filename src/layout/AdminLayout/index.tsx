@@ -73,29 +73,23 @@ export default function AdminLayout({
       >
         <Button
           type="text"
-          icon={
-            collapse ? (
-              <MenuUnfoldOutlined
-                style={{
-                  fontSize: "24px",
-                }}
-              />
-            ) : (
-              <MenuFoldOutlined
-                style={{
-                  fontSize: "24px",
-                }}
-              />
-            )
-          }
+          icon={collapse ? (
+            <MenuUnfoldOutlined
+              style={{
+                fontSize: "24px",
+              }} />
+          ) : (
+            <MenuFoldOutlined
+              style={{
+                fontSize: "24px",
+              }} />
+          )}
           onClick={() => setCollapse(!collapse)}
           style={{
             width: 64,
             height: 64,
             color: "#fff",
-          }}
-        >
-          vewv
+          }} children={undefined}        >
         </Button>
         <Menu
           theme="dark"
