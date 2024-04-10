@@ -1,3 +1,4 @@
 import constants from "./constants";
 import enums from "./enums";
-export {constants, enums}
+import { routerProtected } from './protected';
+export {constants, enums, routerProtected}

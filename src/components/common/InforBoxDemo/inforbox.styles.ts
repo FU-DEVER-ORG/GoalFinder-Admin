@@ -7,4 +7,5 @@ export const InfoField = styled.div`
     padding: 16px;
     border: 1px solid black;
     flex-direction: column;
+    width: fit-content;
 `;
