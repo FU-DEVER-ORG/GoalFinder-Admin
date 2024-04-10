@@ -7,7 +7,7 @@ import {
   NotificationOutlined,
   UserOutlined,
 } from "@ant-design/icons";
-import { Layout, Menu } from "antd";
+import { Grid, Layout, Menu } from "antd";
 import { Content, Header } from "antd/es/layout/layout";
 import Sider from "antd/es/layout/Sider";
 import { useRouter } from "next/navigation";
@@ -20,6 +20,9 @@ export default function AdminLayout({
 }) {
   const route = useRouter();
   const isAuth = true;
+  const { useBreakpoint } = Grid;
+  const screens = useBreakpoint();
+  console.log(screens);
 
   useLayoutEffect(() => {
     if (!isAuth) {
@@ -107,12 +110,14 @@ export default function AdminLayout({
       </Header>
       <Layout>
         <Sider
+          trigger={null}
           width={200}
           style={{
             background: "#fff",
           }}
           breakpoint="sm"
           collapsed={collapse}
+          collapsedWidth={screens?.sm == true ? 80 : 0}
           onCollapse={() => setCollapse(!collapse)}
         >
           <Menu
@@ -124,13 +129,12 @@ export default function AdminLayout({
         </Sider>
         <Layout
           style={{
-            padding: "24px 24px",
+            padding: "16px 16px",
           }}
         >
           <Content
             style={{
-              position: "relative",
-              padding: 24,
+              padding: 16,
               margin: 0,
               minHeight: 280,
               background: "#fff",
