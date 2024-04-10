@@ -12,7 +12,7 @@ export default function Home() {
       <StyledTest>
         <ButtonCommonDemo
           $color="blue"
-          onClick={() => route.push("/user/demopage")}
+          onClick={() => route.push("/demopage")}
         >
           DEMO PAGE
         </ButtonCommonDemo>
