@@ -10,8 +10,10 @@ import {
 import { Grid, Layout, Menu } from "antd";
 import { Content, Header } from "antd/es/layout/layout";
 import Sider from "antd/es/layout/Sider";
+import { deleteCookie } from "cookies-next";
 import { useRouter } from "next/navigation";
 import React, { useLayoutEffect, useState } from "react";
+import { cookies } from "next/headers";
 
 export default function AdminLayout({
   children,
@@ -65,22 +67,30 @@ export default function AdminLayout({
       >
         <Button
           type="text"
-          icon={collapse ? (
-            <MenuUnfoldOutlined
-              style={{
-                fontSize: "24px", color: "white"
-              }} />
-          ) : (
-            <MenuFoldOutlined
-              style={{
-                fontSize: "24px", color: "white"
-              }} />
-          )}
+          icon={
+            collapse ? (
+              <MenuUnfoldOutlined
+                style={{
+                  fontSize: "24px",
+                  color: "white",
+                }}
+              />
+            ) : (
+              <MenuFoldOutlined
+                style={{
+                  fontSize: "24px",
+                  color: "white",
+                }}
+              />
+            )
+          }
           onClick={() => setCollapse(!collapse)}
           style={{
             width: 64,
             height: 64,
-          }} children={undefined}        >
+          }}
+        >
+          fewf
         </Button>
         <Menu
           theme="dark"
