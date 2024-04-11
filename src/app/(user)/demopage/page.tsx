@@ -3,6 +3,7 @@ import InforBox from "@/components/common/InforBoxDemo";
 import React from "react";
 import schema from "./demopage.schema";
 import styled from "styled-components";
+import { constants } from "@/settings";
 
 export default function DemoPage() {
   return (

@@ -19,16 +19,8 @@ export default function AdminLayout({
   children: React.ReactNode;
 }) {
   const route = useRouter();
-  const isAuth = true;
   const { useBreakpoint } = Grid;
   const screens = useBreakpoint();
-  console.log(screens);
-
-  useLayoutEffect(() => {
-    if (!isAuth) {
-      route.push(`/auth/sign-in`);
-    }
-  }, [isAuth, route]);
 
   const demoItem1 = [1, 2, 3].map((key) => ({
     key,
@@ -76,19 +68,18 @@ export default function AdminLayout({
           icon={collapse ? (
             <MenuUnfoldOutlined
               style={{
-                fontSize: "24px",
+                fontSize: "24px", color: "white"
               }} />
           ) : (
             <MenuFoldOutlined
               style={{
-                fontSize: "24px",
+                fontSize: "24px", color: "white"
               }} />
           )}
           onClick={() => setCollapse(!collapse)}
           style={{
             width: 64,
             height: 64,
-            color: "#fff",
           }} children={undefined}        >
         </Button>
         <Menu

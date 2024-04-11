@@ -5,12 +5,8 @@ import {
   fetchBaseQuery,
   BaseQueryFn,
 } from "@reduxjs/toolkit/query/react";
+import { error } from "console";
 
-// Define an interface for the error object structure
-interface ErrorDetail {
-  code: string;
-  detail: string;
-}
 
 // Define an interface for the custom request args
 interface CustomRequestArgs {
@@ -48,16 +44,10 @@ const baseQueryWithCustomRequest: CustomRequestFunction = async (
   const { flashError = false, flashSuccess = false } = args;
   if (result?.error) {
     if (flashError) {
-      const errors: ErrorDetail[] = result?.error?.data?.errors;
-      errors.forEach((element) => {
-        //todo addition in need
-        console.error(element.detail);
-      });
+      //todo customize error log here
+      const errors = result?.error;
+      // console.log(errors);
     }
-    if (result?.error && result?.error.status === 401) {
-      // try to get a new token
-    }
-
     return result;
   }
 

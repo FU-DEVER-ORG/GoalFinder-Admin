@@ -1,14 +1,18 @@
-'use client'
+"use client";
+import { authEndpoint } from "@/services/endpoint";
 import { api } from "./base";
 
 export const authAPI = api.injectEndpoints({
   endpoints: (build) => ({
-
     signIn: build.mutation({
-        //todo addition data in need
-      query: (data: {email:string, password:string}) => ({
+      //todo addition data in need
+      query: (data: {
+        username: string;
+        password: string;
+        rememberMe: boolean;
+      }) => ({
         //todo
-        url: "https://demo/endpoint",
+        url: authEndpoint.SIGN_IN,
         method: "POST",
         body: data,
         flashError: true,
@@ -20,6 +24,6 @@ export const authAPI = api.injectEndpoints({
 });
 
 export const {
-  useSignInMutation
+  useSignInMutation,
   //todo addition in need
 } = authAPI;
