@@ -1,19 +1,22 @@
-'use client'
 import { redirect } from "next/navigation";
 import { useAppSelector } from "@/hooks";
 import { useLayoutEffect } from "react";
+import { deleteCookie, getCookie } from "cookies-next";
+import { cookies } from "next/headers";
+import { checkToken } from "@/utils/checkToken";
 
-export default function LayoutAuth({
+export default async function LayoutAuth({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const {isAuth} = useAppSelector((state) => state.auth);
-  useLayoutEffect(() => {
-    if(isAuth) {
-      redirect("/")
-    }
-  }, [isAuth])
+  const token = getCookie("next_token", { cookies });
+
+  const isAuth = await checkToken(token);
+
+  if (isAuth) {
+    redirect("/");
+  }
 
   return <div>{children}</div>;
 }
