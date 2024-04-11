@@ -7,7 +7,7 @@ import * as S from "./signIn.styles";
 export default function SignIn() {
   //demo rtk query
   const [signIn, { isLoading }] = useSignInMutation();
-  const handleSignUp = async () => {
+  const handleSignIn = async () => {
     try {
       const data = {
         username: "ledinhdangkhoa10a9@gmail.com",
@@ -26,7 +26,7 @@ export default function SignIn() {
             <Input type="password" placeholder="Enter password"/>
             <Checkbox>Remember me?</Checkbox>
             <Button $color="white" $backgroundColor="#00a8f7ce"
-              onClick={() => handleSignUp()}
+              onClick={() => handleSignIn()}
             >Sign In</Button>
         </S.InputWrapper>
     </S.CenterContainer>

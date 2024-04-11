@@ -1,6 +1,5 @@
 'use client'
 import { redirect } from "next/navigation";
-// import { checkLogin } from "../(user)/layout";
 import { useAppSelector } from "@/hooks";
 import { useLayoutEffect } from "react";
 
