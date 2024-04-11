@@ -1,13 +1,8 @@
-import { redirect } from "next/navigation";
-import AdminLayout from "@/layout/AdminLayout";
-import webStorageClient from "@/utils/webStorageClient";
-import { constants } from "@/settings";
-import { useAppSelector } from "@/hooks";
-import { RootState } from "@/store";
-import { useLayoutEffect } from "react";
-import { deleteCookie, getCookie } from "cookies-next";
-import { cookies } from "next/headers";
+import AdminLayout from "@/components/core/layout/AdminLayout";
 import { checkToken } from "@/utils/checkToken";
+import { getCookie } from "cookies-next";
+import { cookies } from "next/headers";
+import { redirect } from "next/navigation";
 
 export default async function LayoutAuth({
   children,
@@ -16,7 +11,6 @@ export default async function LayoutAuth({
 }) {
   const token = getCookie("next_token", { cookies });
 
-  console.log("token", token);
   const isAuth = await checkToken(token);
 
   if (!isAuth) {

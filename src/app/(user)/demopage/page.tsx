@@ -1,5 +1,5 @@
 "use client"
-import InforBox from "@/components/common/InforBoxDemo";
+import InforBox from "@/components/core/common/InforBoxDemo";
 import React from "react";
 import schema from "./demopage.schema";
 import styled from "styled-components";

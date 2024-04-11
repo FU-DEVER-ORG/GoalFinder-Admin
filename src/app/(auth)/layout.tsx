@@ -1,9 +1,7 @@
-import { redirect } from "next/navigation";
-import { useAppSelector } from "@/hooks";
-import { useLayoutEffect } from "react";
-import { deleteCookie, getCookie } from "cookies-next";
-import { cookies } from "next/headers";
 import { checkToken } from "@/utils/checkToken";
+import { getCookie } from "cookies-next";
+import { cookies } from "next/headers";
+import { redirect } from "next/navigation";
 
 export default async function LayoutAuth({
   children,

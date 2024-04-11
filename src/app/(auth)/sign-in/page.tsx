@@ -1,5 +1,5 @@
 "use client";
-import Button from "@/components/common/DemoButton";
+import Button from "@/components/core/common/DemoButton";
 import { useSignInMutation } from "@/store/services/auth";
 import { Checkbox, Input } from "antd";
 import * as S from "./signIn.styles";

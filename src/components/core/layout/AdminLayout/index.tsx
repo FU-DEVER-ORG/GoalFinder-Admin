@@ -1,5 +1,5 @@
 "use client";
-import Button from "@/components/common/DemoButton";
+import Button from "@/components/core/common/DemoButton";
 import {
   LaptopOutlined,
   MenuFoldOutlined,
@@ -90,7 +90,7 @@ export default function AdminLayout({
             height: 64,
           }}
         >
-          fewf
+          {""}
         </Button>
         <Menu
           theme="dark"
