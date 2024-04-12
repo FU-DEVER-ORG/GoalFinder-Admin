@@ -1,12 +1,16 @@
+import { checkToken } from "@/utils/checkToken";
+import { getCookie } from "cookies-next";
+import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
-import { checkLogin } from "../(user)/layout";
 
 export default async function LayoutAuth({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const isAuth = await checkLogin();
+  const token = getCookie("next_token", { cookies });
+
+  const isAuth = await checkToken(token);
 
   if (isAuth) {
     redirect("/");

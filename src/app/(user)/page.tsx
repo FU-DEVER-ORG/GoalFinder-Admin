@@ -1,5 +1,5 @@
 "use client";
-import { ButtonCommonDemo } from "@/components/common/DemoButton/demo.styles";
+import { ButtonCommonDemo } from "@/components/core/common/DemoButton/demo.styles";
 import { useRouter } from "next/navigation";
 import React from "react";
 import styled from "styled-components";

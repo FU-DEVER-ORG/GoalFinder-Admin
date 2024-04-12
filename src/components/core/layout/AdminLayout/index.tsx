@@ -1,5 +1,5 @@
 "use client";
-import Button from "@/components/common/DemoButton";
+import Button from "@/components/core/common/DemoButton";
 import {
   LaptopOutlined,
   MenuFoldOutlined,
@@ -10,8 +10,10 @@ import {
 import { Grid, Layout, Menu } from "antd";
 import { Content, Header } from "antd/es/layout/layout";
 import Sider from "antd/es/layout/Sider";
+import { deleteCookie } from "cookies-next";
 import { useRouter } from "next/navigation";
 import React, { useLayoutEffect, useState } from "react";
+import { cookies } from "next/headers";
 
 export default function AdminLayout({
   children,
@@ -19,16 +21,8 @@ export default function AdminLayout({
   children: React.ReactNode;
 }) {
   const route = useRouter();
-  const isAuth = true;
   const { useBreakpoint } = Grid;
   const screens = useBreakpoint();
-  console.log(screens);
-
-  useLayoutEffect(() => {
-    if (!isAuth) {
-      route.push(`/auth/sign-in`);
-    }
-  }, [isAuth, route]);
 
   const demoItem1 = [1, 2, 3].map((key) => ({
     key,
@@ -73,23 +67,30 @@ export default function AdminLayout({
       >
         <Button
           type="text"
-          icon={collapse ? (
-            <MenuUnfoldOutlined
-              style={{
-                fontSize: "24px",
-              }} />
-          ) : (
-            <MenuFoldOutlined
-              style={{
-                fontSize: "24px",
-              }} />
-          )}
+          icon={
+            collapse ? (
+              <MenuUnfoldOutlined
+                style={{
+                  fontSize: "24px",
+                  color: "white",
+                }}
+              />
+            ) : (
+              <MenuFoldOutlined
+                style={{
+                  fontSize: "24px",
+                  color: "white",
+                }}
+              />
+            )
+          }
           onClick={() => setCollapse(!collapse)}
           style={{
             width: 64,
             height: 64,
-            color: "#fff",
-          }} children={undefined}        >
+          }}
+        >
+          {""}
         </Button>
         <Menu
           theme="dark"
